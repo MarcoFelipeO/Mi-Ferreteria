@@ -1,0 +1,55 @@
+
+
+
+h1 {
+    font-family: "Gotham Medium";
+    color: #175e93;
+    font-size: 35px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+
+
+.uno{
+    font-family: "";
+    color: black;
+   text-align: left;
+    font-size: 17px;
+   
+}
+
+
+
+
+
+
+.fondo2{
+    
+    background: #e3b793;
+width: 100%;
+padding: 20px;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+}
+
+
+
+.fondo3{
+    background: cornflowerblue;
+width: 100%;
+padding: 20px;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+}
+
+
+.izi{
+    color:#175e93;
+}
+
+

@@ -1,0 +1,55 @@
+<div class="row col-md-12"  *ngFor="let cabecera of listaCompras">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Fecha Compra</th>
+                <th scope="col">Total Compra</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td with="5%">{{ cabecera.id }}</td>
+                <td>{{ cabecera.created_at | date }}</td>
+                <td class="text-justify">{{ cabecera.total }}</td>
+                <td class="text-justify">{{ cabecera.estado }}</td>
+                <td class="text-justify" *ngIf="cabecera.estado === 'pendiente'">
+                    <button class="btn btn-primary" (click)="procesar(cabecera.detallecompra, cabecera.id)">Procesar Compra</button>
+                </td>
+                <td class="text-justify" *ngIf="cabecera.estado !== 'pendiente'">
+                    Compra Procesada
+                </td>
+            </tr>
+            <tr>
+                <td with="5%">Detalle Productos</td>
+                <td colspan="3">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col" colspan="2">Producto</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio fecha compra</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr *ngFor="let detallecompra of cabecera.detallecompra">
+                                <td>{{ detallecompra.id }}</td>
+                                <td>{{ obtenerTitulo(detallecompra.producto) }}</td>
+                                <td>
+                                    <a [href]="'/detalle-producto/' + obtenerId(detallecompra.producto)">
+                                        <img class="imgProducto" [src]="obtenerImagen(detallecompra.producto)" alt="Card image cap">
+                                    </a>
+                                </td>
+                                <td>{{ detallecompra.cantidad }}</td>
+                                <td>{{ detallecompra.preciofecha }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

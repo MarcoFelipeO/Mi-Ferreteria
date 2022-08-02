@@ -1,0 +1,17 @@
+.imgProducto{
+    height: 190px;
+    border: 100;
+    padding: 10%;
+    
+}
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color:black;
+}
+
+.newparejo{
+    height: 190px;
+    border: 100%;
+    padding: 5%;
+    
+}

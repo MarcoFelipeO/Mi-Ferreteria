@@ -1,0 +1,32 @@
+<br><br>
+<div class="newmanejo">
+<div class="row">
+  <div class="col">
+      <p>Categoria</p>
+  </div>
+  <div class="col">
+      <select class="form-control" [(ngModel)]="categoriaFiltro">
+          <option [value]="0">Todos</option>
+          <option [value]="categoria.id" *ngFor="let categoria of listaCategoria">{{ categoria.detalle }}</option>
+      </select>
+  </div>
+  <div class="col">
+      <button type="button" class="btn btn-primary" (click)="filtrarCategoria()">Filtrar</button>
+  </div>
+</div>
+<br><br>
+<div class="row">
+    <div class="col-md-3" *ngFor="let producto of listaProductoF">
+      <a [href]="'detalle-producto/' + producto.id">
+        <div class="card">
+            <img class="card-img-top imgProducto" [src]="producto.imagen" alt="Card image cap">
+            <div class="card-body">
+              <h3 class="card-title">${{ producto.precio }}</h3>
+              <h5 class="card-title">{{ producto.titulo }}</h5>
+            </div>
+          </div>
+      </a>
+    </div>
+</div>
+</div>
+<br><br>

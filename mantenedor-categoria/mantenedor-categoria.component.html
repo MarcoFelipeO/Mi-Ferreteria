@@ -1,0 +1,27 @@
+<br><br>
+<div class="row col-md-12">
+    <div class="col-md-3" style="margin-top: 10px; margin-bottom: 10px;">
+        <button type="button" class="btn btn-success" (click)="openDialog()">Crear</button>
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" width="5%">#</th>
+                <th scope="col" width="85%">Descripción</th>
+                <th scope="col" width="10%">Acciones</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let categoria of listaCategoria">
+                <td>{{ categoria.id }}</td>
+                <td class="text-justify">{{ categoria.detalle }}</td>
+                <td>
+                    <button class="btn btn-warning" (click)="openDialogModificar(categoria.id);">Modificar</button>
+                    <br><br>
+                    <button class="btn btn-danger" (click)="eliminar(categoria.id);">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

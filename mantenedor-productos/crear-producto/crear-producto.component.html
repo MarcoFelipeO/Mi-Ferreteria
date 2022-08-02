@@ -1,0 +1,64 @@
+<h2 mat-dialog-title>Crear Producto</h2>
+<mat-dialog-content>
+    <div class="row">
+        <input type="hidden" [(ngModel)]="producto.id">
+        <div class="col-md-3">
+            <p>Titulo</p>
+        </div>
+        <div class="col-md-9">
+            <input type="text" class="form-control" placeholder="Ingrese Titulo" [(ngModel)]="producto.titulo" >
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Detalle</p>
+        </div>
+        <div class="col-md-9">
+            <textarea rows="10" class="form-control txtAreaFija" placeholder="Ingrese detalle" [(ngModel)]="producto.detalle"></textarea>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Precio</p>
+        </div>
+        <div class="col-md-9">
+            <input type="text" class="form-control" placeholder="Ingrese Precio" [(ngModel)]="producto.precio">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Stock</p>
+        </div>
+        <div class="col-md-9">
+            <input type="text" class="form-control" placeholder="Ingrese Stock" [(ngModel)]="producto.stock">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Categoria</p>
+        </div>
+        <div class="col-md-9">
+            <select class="form-control" [(ngModel)]="producto.id_categoria">
+                <option [value]="categoria.id" *ngFor="let categoria of listaCategoria">{{ categoria.detalle }}</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Imagen</p>
+        </div>
+        <div class="col-md-9">
+            <input type="file" class="form-control" placeholder="Ingrese imagen" #inputEl>
+        </div>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions aling="end">
+    <button class="btn btn-danger" (click)="cancelar();">Cancelar</button>
+    <button class="btn btn-success" (click)="grabar();">Guardar</button>
+</mat-dialog-actions>

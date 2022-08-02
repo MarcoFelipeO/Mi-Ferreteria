@@ -1,0 +1,45 @@
+<br><br>
+
+<div class="row col-md-12" *ngIf="listaProductos.length > 0">
+    <div class="col-md-12" *ngFor="let producto of listaProductos">
+        <br><br>
+        <div class="row">
+            <div class="col-md-1">
+                <img class="card-img-top imgProducto" [src]="producto.imagen" alt="Card image cap">
+            </div>
+            <div class="col-md-5">
+                <div class="card-body">
+                    <h3 class="card-title">{{ producto.titulo }}</h3>
+                    <button class="btn btn-danger" (click)="eliminar(producto.id)">Eliminar</button>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card-body">
+                    <input type="number" class="form-control" max="5" min="1" [(ngModel)]="producto.cantidad" (change)="validar(producto)">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card-body">
+                    <h3 class="card-title"> ${{ obtenerTotalProducto(producto) }}</h3>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="col-md-12">
+        <div class="offset-md-8 col-md-4">
+            <h3 class="card-title">Total: ${{ obtenerTotal() }}</h3>
+        </div>
+        <hr>
+        <div class="offset-md-8 col-md-4">
+            <button class="btn btn-primary" routerLink="/compras" (click)="comprar()">Comprar</button>&nbsp;&nbsp;
+            <button class="btn btn-success" (click)="seguir()">Seguir Comprando</button>
+        </div>
+    </div>
+</div>
+<div class="row col-md-12" *ngIf="listaProductos.length == 0">
+    <div class="card-body">
+        <h3 class="card-title">No existen productos en su carrito de compras</h3>
+    </div>
+</div>
+<br><br>

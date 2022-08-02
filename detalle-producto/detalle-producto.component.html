@@ -1,0 +1,33 @@
+<div class="row">
+    <a [href]="''">Volver</a>
+    <div class="col-md-6">
+        <br><br>
+        <div class="card">
+            <img class="card-img-top imgProducto" [src]="producto.imagen" alt="Card image cap">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <br><br>
+        <div class="card-body">
+            <h5 class="card-title">{{ producto.titulo }}</h5>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="card-title"> ${{ producto.precio }}</h3>
+                </div>
+            </div>
+            <p class="card-text">{{ producto.detalle }}</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="card-title">{{ producto.stock }} Unidades en stock </h4>
+                </div>
+                <div class="col-md-2">
+                    <input type="number" class="form-control" max="100" min="1" [(ngModel)]="agregar">
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-primary" (click)="agregarCarro(producto.id)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
